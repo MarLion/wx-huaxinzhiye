@@ -1,0 +1,29 @@
+<view class="followup">  
+  <!--跟进列表-->
+  <view class="followList" wx:for="{{lookDetailList}}" wx:key="{{item}}">
+    <view class="mb20 flex-wrp flex-direction-row justify-content-space-between">
+      <text class="text1">{{item.userName}}</text>
+      <text class="text2">{{item.finishTime}}</text>
+    </view>
+    <view>
+      <view class="flex-wrp flex-direction-row ">
+        <view class="w50">
+          <text class="text4">客户:</text>
+          <text class="text4">{{item.custName}}</text>
+        </view>
+        <view class="w50">
+          <text class="text4 ml40">小区:</text>
+          <text class="text4">{{community}}</text>
+        </view>       
+      </view>    
+      <view class="mt10">
+        <text class="text4">反馈:</text>
+        <text class="text4 word-wrap">{{item.feedback}}</text>
+      </view>
+      
+    </view>
+  </view>
+  <view wx:if="!{{lookDetailList}}" class="flex-wrp justify-content-center mt100">
+    <text>暂无带看信息</text>
+  </view>
+</view>

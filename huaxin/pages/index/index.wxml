@@ -1,0 +1,62 @@
+<view class="container">  
+    <view class="userinfo" style='background: url("https://www.huhuaxin.com/images/app/mainbg2.png") center no-repeat;background-size: 100% 100%;'>
+      <image class="userinfo-avatar" src="{{headImg}}" mode="cover"></image>
+      <view class="user-message">
+        <text class="userinfo-nickname">{{userInfo.empName}}</text>
+        <text class="userinfo-nickname">{{userInfo.deptName}}</text>
+        <text class="userinfo-nickname">{{userInfo.roleName}}</text>
+      </view>
+    </view> 
+    <view class='line'></view>
+    <view class='fs30 all-width pad-b30 mt30'>
+      <view class='padding-review'>
+        <text>业务审核—未审核项</text>
+      </view>
+      <view wx:if="{{!haveReviewItem}}" class='mt30 text-center tip-color'>
+        <text>暂无未审核项</text>
+      </view>
+      <view wx:else class='fs30'>
+        <view class='review-container'>
+          <block wx:for="{{review}}" wx:key="review">
+            <view class="review-item" bindtap="navitageToList" data-type="{{item.iconType}}">
+              <image src="{{item.imgUrl}}" class="icon-image fl clf"></image>
+              <text class="fl clf">{{item.text}}({{item.num}})</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class='line'></view>
+    <view class='fs30 all-width pad-b30 mt30'>
+      <view class='padding-review'>
+        <text>业务申请—待审核项</text>
+      </view>
+      <view wx:if="{{!haveApplyItem}}" class='mt30 text-center tip-color'>
+        <text>暂无未审核项</text>
+      </view>
+      <view wx:else class='fs30'>
+        <view class='review-container'>
+          <block wx:for="{{applyNum}}" wx:key="apply">
+            <view class="review-item" bindtap="navitageToApplyList">
+              <image src="{{item.imgUrl}}" class="icon-image fl clf"></image>
+              <text class="fl clf">{{item.text}}({{item.myApplyNum}})</text>
+            </view>
+          </block>
+      </view>
+    </view>
+  </view>
+  <view class='line'></view>
+  <view class='fs30 all-width pad-b30 mt30'>
+    <view class='padding-review'>
+      <text>业务操作—统计图表</text>
+    </view>
+    <view class='fs30'>
+      <view class='review-container'>
+        <view class="review-item" bindtap="navitageToChart">
+          <image src="http://192.168.2.212:8080/../../images/app/logout.png" class="icon-image fl clf"></image>
+          <text class="fl clf">统计图表</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

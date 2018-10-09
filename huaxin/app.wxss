@@ -1,0 +1,160 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+}
+.row-container{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.fl{
+  float: left;
+}
+.clf{
+  clear: left;
+}
+.mt30{
+  margin-top: 30rpx;
+}
+.mt50{
+  margin-top: 50rpx;
+}
+.mt100{
+  margin-top: 100rpx;
+}
+.fs30{
+  font-size: 30rpx;
+}
+.line{
+  height: 30rpx;
+  width: 100%;
+  background-color: #F8F8F8;
+}
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
+}
+.all-width{
+  width: 100%;
+}
+.add-width{
+  width: 50%;
+}
+.title-color{
+  color:rgb(29, 152, 223);
+}
+.pad-20{
+  padding: 0 20rpx;
+}
+.warn-color{
+  color: red;
+}
+.success-color{
+  color:green;
+}
+.pad-bot{
+  padding-bottom: 100rpx;
+}
+.tip-color{
+  color: #999999
+}
+.pad-b30{
+  padding-bottom: 30rpx;
+}
+.bg-white{
+  background-color: #ffffff;
+}
+.bg-gray{
+  background-color: #F8F8F8;
+}
+/**字体**/
+.font-fff{
+  color:#fff;
+}
+/**间距**/
+.ml10{
+  margin-left:10rpx;
+}
+.ml20{
+  margin-left:20rpx;
+}
+.ml50{
+  margin-left:50rpx;
+}
+.ml40{
+  margin-left:40rpx;
+}
+.mr40{
+  margin-right:40rpx;
+}
+.mt10{
+  margin-top:10rpx;
+}
+.mt20{
+  margin-top:20rpx;
+}
+.mt40{
+  margin-top:40rpx;
+}
+.mt60{
+  margin-top:60rpx;
+}
+.mb10{
+  margin-bottom:10rpx;
+}
+.mb20{
+  margin-bottom:20rpx;
+}
+.mb30{
+  margin-bottom:30rpx;
+}
+.mb40{
+  margin-bottom:40rpx;
+}
+.mb100{
+  margin-bottom:100rpx;
+}
+/**其他公用**/
+.word-wrap{
+  word-wrap: break-word;word-break:break-all;
+}
+/**flex 布局专用**/
+.flex-wrp {
+  display: flex;
+}
+.flex-direction-row{
+  flex-direction:row;
+}
+.flex-direction-column{
+  flex-direction:column;
+}
+.flex-wrap-wrap{
+  flex-wrap:wrap;
+}
+.justify-content-space-between{
+  justify-content:space-between;
+}
+.justify-content-space-around{
+  justify-content: space-around;
+}
+.align-content-center{
+  align-content:center;
+}
+.align-items-center{
+  align-items:center;
+}
+.justify-content-center{
+  justify-content:center;
+}

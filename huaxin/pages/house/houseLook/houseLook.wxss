@@ -1,0 +1,27 @@
+
+.followList{
+  margin:20rpx 40rpx;
+  border:1px solid #ddd;
+  border-radius:10rpx;
+  padding:20rpx;
+}
+.text1{
+  font-size:30rpx;
+  color:#000;
+}
+.text2{
+  font-size:30rpx;
+  color:#666;
+}
+.text3{
+  font-size:30rpx;
+  color:chocolate;
+}
+.text4{
+  font-size:30rpx;
+  color:#666;
+}
+.w50{
+  width:50%;
+}
+

@@ -1,0 +1,111 @@
+<view>
+  <view class='fs30 tab-container'>
+    <view class='tab-item {{currentTab==0?"tab-select":""}}' data-current='0'  bindtap='swichTab'>请假</view>
+    <view class='tab-item {{currentTab==1?"tab-select":""}}' data-current='1'  bindtap='swichTab'>调休</view>
+    <view class='tab-item {{currentTab==2?"tab-select":""}}' data-current='2'  bindtap='swichTab'>异常</view>
+  </view>
+  <swiper current='{{currentTab}}' bindchange='swiperChange' style='height:{{winHeight}}rpx;'>
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scoll-h">
+          <block wx:for="{{dataListOne}}" wx:key="one">
+            <view class='reviewing-container' data-audit-id='{{item.auditId}}' data-current-node='{{item.curentNode}}' bindtap='toDetail'>
+              <view>
+                <text>{{item.leaveTypeStr}}</text>
+              </view>
+              <view class='fs30'>
+                <view>
+                  <text decode='true'>申&nbsp;&nbsp;请&nbsp;&nbsp;人：</text>
+                  <text>{{item.applyer}}</text>
+                </view>
+                <view class='mt30'>
+                  <text>申请时间：</text>
+                  <text>{{item.addTime}}</text>
+                </view>
+                <view class='mt30'>
+                  <text>申请类型：</text>
+                  <text>{{item.leaveTypeStr}}</text>
+                </view>
+                <view class='mt30'>
+                  <text>审核状态：</text>
+                  <text class='warn-color'>{{item.resultStr}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{oneNoe}}">
+            <view class='all-width fs30 mt30 text-center tip-color pad-b30'>
+              <text>暂无未审核项</text>
+            </view>
+        </block> 
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scoll-h">
+          <block wx:for="{{dataListTwo}}" wx:key="two">
+            <view class='reviewing-container' data-audit-id='{{item.auditId}}' bindtap='toDetail'>
+              <view>
+                <text>{{item.leaveTypeStr}}</text>
+              </view>
+              <view class='fs30'>
+                <view>
+                  <text decode='true'>申&nbsp;&nbsp;请&nbsp;&nbsp;人：</text>
+                  <text>{{item.applyer}}</text>
+                </view>
+                <view class='mt30'>
+                  <text>申请时间：</text>
+                  <text>{{item.addTime}}</text>
+                </view>
+                <view class='mt30'>
+                  <text>申请类型：</text>
+                  <text>{{item.leaveTypeStr}}</text>
+                </view>
+                <view class='mt30'>
+                  <text>审核状态：</text>
+                  <text class='warn-color'>{{item.resultStr}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{twoNoe}}">
+            <view class='all-width fs30 mt30 text-center tip-color pad-b30'>
+              <text>暂无未审核项</text>
+            </view>
+        </block> 
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scoll-h">
+          <block wx:for="{{dataListThree}}" wx:key="three">
+            <view class='reviewing-container' data-audit-id='{{item.auditId}}' bindtap='toDetail'>
+              <view>
+                <text>{{item.leaveTypeStr}}</text>
+              </view>
+              <view class='fs30'>
+                <view>
+                  <text decode='true'>申&nbsp;&nbsp;请&nbsp;&nbsp;人：</text>
+                  <text>{{item.applyer}}</text>
+                </view>
+                <view class='mt30'>
+                  <text>申请时间：</text>
+                  <text>{{item.addTime}}</text>
+                </view>
+                <view class='mt30'>
+                  <text>申请类型：</text>
+                  <text>{{item.leaveTypeStr}}</text>
+                </view>
+                <view class='mt30'>
+                  <text>审核状态：</text>
+                  <text class='warn-color'>{{item.resultStr}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{threeNoe}}">
+            <view class='all-width fs30 mt30 text-center tip-color pad-b30'>
+              <text>暂无未审核项</text>
+            </view>
+        </block> 
+        </scroll-view>
+      </swiper-item>
+  </swiper>
+</view>

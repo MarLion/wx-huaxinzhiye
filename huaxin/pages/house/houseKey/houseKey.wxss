@@ -1,0 +1,81 @@
+.followInput{
+  margin:20rpx 40rpx;
+  margin-bottom:60rpx;
+}
+.textarea{
+  border:1px solid #ddd;
+  border-radius:10rpx;
+  width:94%;
+  padding:20rpx;
+  font-size:30rpx;
+  height:150rpx;
+}
+.textarea-xs{
+  border:1px solid #ddd;
+  border-radius:10rpx;
+  width:94%;
+  padding:20rpx;
+  font-size:30rpx;
+  height:40rpx;
+}
+
+.bottomInput{
+  width:40%;
+  height:60rpx;
+  line-height:60rpx;
+  font-size:28rpx;
+}
+
+.bottomInput-del{
+  width:150rpx;
+  height:50rpx;
+  line-height:50rpx;
+  font-size:24rpx;
+  background-color:rgba(255, 0, 0,0.6);
+  color:#fff;
+}
+.followList{
+  margin:20rpx 40rpx;
+  border:1px solid #ddd;
+  border-radius:10rpx;
+  padding:20rpx;
+}
+.text1{
+  font-size:30rpx;
+  color:#000;
+}
+.text2{
+  font-size:30rpx;
+  color:#666;
+}
+.text3{
+  font-size:30rpx;
+  color:chocolate;
+}
+.text4{
+  font-size:30rpx;
+  color:#666;
+}
+.text5{
+  font-size:30rpx;
+  width:100rpx;
+}
+.text6{
+  font-size:32rpx;
+  color:#333;
+  margin-left:40rpx;
+  width:60%;
+}
+.text7{
+  font-size:30rpx;
+  color:#333;
+}
+.tal{
+  display:flex;
+  justify-content:space-between;
+}
+.tac{
+  display:flex;
+  justify-content:center;
+}
+

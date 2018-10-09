@@ -1,0 +1,13 @@
+<view class="userinfo-login">
+  <image src='https://www.huhuaxin.com/images/logo.png' class='logo'></image>
+  <block wx:if="{{!loginStatue}}">
+    <input placeholder="请输入华信账号" bindinput="inputAccount" focus="{{focus}}" class='account-input'/>
+    <input placeholder="请输入华信密码" password="true" bindinput="inputPassWord" class='account-pass'/>
+    <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="bindAccount" class='account-btn'> 绑定微信号并登陆 </button>
+  </block>
+  <block wx:else>
+    <view class='fs30 mt30 tip-color'>
+      <text>正在登陆中...</text>
+    </view>
+  </block>
+</view>

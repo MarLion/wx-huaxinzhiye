@@ -1,0 +1,56 @@
+<view class='fs30 pad-b30 pad-20'>
+ <view class='mt30'>
+      <text class='title-color'>考勤信息</text>
+  </view>
+  <view class='pad-20'>
+    <view class='mt30'>
+      <text>申请类型：</text>
+      <text class='warn-color'>{{dataList.atendApply.leaveTypeStr}}</text>
+    </view>
+    <view class='mt30'>
+      <text decode='true'>开始时间：</text>
+      <text class='warn-color'>{{dataList.atendApply.begTime}}</text>
+    </view>
+    <view class='mt30'>
+      <text decode='true'>结束时间：</text>
+      <text class='warn-color'>{{dataList.atendApply.endTime}}</text>
+    </view>
+    <view class='mt30'>
+      <text decode='true'>事&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由：</text>
+      <text class='warn-color'>{{dataList.atendApply.leaveRemark}}</text>
+    </view>
+  </view>
+  <view class='fs30 mt50'>
+    <text class='title-color'>审核意见</text>
+    <input placeholder="请输入您的审核意见" bindinput="inputAdvice" class='account-input'/>
+    <view class='btn-container'>
+      <button type="primary" bindtap="bindAgree" class='account-btn' style='width:45%;'>通过</button>
+      <button type="warn" bindtap="bindRefuse" class='account-btn' style='width:45%;'>拒绝</button>
+    </view>
+  </view>
+  <view class='mt30'>
+      <text class='title-color'>审核记录</text>
+  </view>
+  <view class='pad-20'>
+    <block wx:for="{{dataList.checkList}}" wx:key="check">
+      <view class='mt30'>
+        <text>审核信息：</text>
+        <text>{{item.remark}}</text>
+      </view>
+      <view class='mt30'>
+        <text>审核状态：</text>
+        <text wx:if="{{item.result == '1'}}" class='warn-color'>{{item.resultStr}}</text>
+        <text wx:elif="{{item.result == '2'}}" class='success-color'>{{item.resultStr}}</text>
+        <text wx:else>{{item.resultStr}}</text>
+      </view>
+      <view class='mt30'>
+        <text>审核人员：</text>
+        <text>{{item.auditer}}</text>
+      </view>
+      <view class='mt30'>
+        <text>审核时间：</text>
+        <text>{{item.checkTime}}</text>
+      </view>
+    </block>
+  </view>
+</view>

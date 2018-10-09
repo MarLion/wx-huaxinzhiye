@@ -1,0 +1,13 @@
+<block wx:for="{{more}}" wx:key="more">
+  <view class='fs30 mt50 tab-container'>
+     <view class='tab-item tab-select'>{{item.title}}</view>
+  </view>
+  <view class='more-container'>
+    <block wx:for="{{item.content}}" wx:key="content">
+      <view class="item" bindtap="navitageToList" data-navi-url="{{item.naviUrl}}">
+        <image src="{{item.imgUrl}}" class="icon-image fl clf"></image>
+        <text class="fl clf">{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+</block>

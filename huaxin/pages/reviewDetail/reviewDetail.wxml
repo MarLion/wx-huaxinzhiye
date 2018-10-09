@@ -1,0 +1,265 @@
+<view class='pad-bot'>
+  <block wx:if="{{type == 'HOUSE_ADD'}}">
+    <view class='fs30 pad-20'>
+      <text class='title-color'>楼盘信息</text>
+      <view class='mt30 pad-20'>
+        <view>
+          <text>楼盘名称：</text>
+          <text class='warn-color'>{{messageData.house.communityName}}{{messageData.house.buildingName}}{{messageData.house.buildingNameDesc}}-{{messageData.house.buildunitName}}{{messageData.house.doorplate}}</text>
+        </view>
+        <view class='mt30'>
+          <text>房源编号：</text>
+          <text class='warn-color'>{{messageData.house.id}}</text>
+        </view>
+        <view class='mt30'>
+          <text>单价/总价：</text>
+          <text decode="{{true}}" class='warn-color'>{{messageData.house.sellUnitPrice}}元/平&nbsp;&nbsp;/&nbsp;&nbsp;{{messageData.house.sellTotalPrice/10000}}万</text>
+        </view>
+      </view>
+      <view class='mt30 btn-container pad-20'>
+        <view class='add-width'>
+          <view>
+            <text>户型：</text>
+            <text class='warn-color'>{{messageData.house.bedroom}}-{{messageData.house.parlour}}-{{messageData.house.washroom}}-{{messageData.house.kitchen}}</text>
+          </view>
+          <view class='mt30'>
+            <text>朝向：</text>
+            <text class='warn-color'>{{messageData.house.faceStr}}</text>
+          </view>
+           <view class='mt30'>
+            <text>装修：</text>
+            <text class='warn-color'>{{messageData.house.decorateStr}}</text>
+          </view>
+           <view class='mt30'>
+            <text>来源：</text>
+            <text class='warn-color'>{{messageData.house.entrustTypeStr}}</text>
+          </view>
+        </view>
+        <view class='add-width'>
+          <view>
+            <text>面积：</text>
+            <text class='warn-color'>{{messageData.house.acreage}}㎡</text>
+          </view>
+          <view class='mt30'>
+            <text>楼层：</text>
+            <text class='warn-color'>{{messageData.house.floor}}({{messageData.house.floor}}/{{messageData.house.totalFloor}})</text>
+          </view>       
+          <view class='mt30'>
+            <text>钥匙：</text>
+            <text class='warn-color'>{{messageData.house.isKeyStr}}</text>
+          </view>       
+          <view class='mt30'>
+            <text>维护人：</text>
+            <text class='warn-color'>{{messageData.house.userName}}</text>
+          </view>
+        </view>        
+      </view>   
+    </view>
+  </block>
+  <block wx:if="{{type == 'PHOTO'}}">
+    <view class='fs30'>
+      <text class='pad-20 title-color'>房堪信息</text>
+      <swiper class='mt30' indicator-dots="true" style='height:450rpx;'>
+         <block wx:for="{{imgData}}" wx:key="img">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="scoll-h">
+                <image src="{{item.url}}" data-url='{{item.url}}' class="slide-image" bindtap='bigImg' style='height:{{item.height}}rpx'/>
+              </scroll-view>
+            </swiper-item>
+          </block>
+      </swiper>
+    </view>
+  </block>
+  <block wx:if="{{type == 'HOUSE_UPDATE'}}">
+    <view class='fs30 pad-20'>
+      <text class='title-color'>修改信息</text>
+      <view class='mt30 btn-container pad-20'>
+        <view class='all-width'>
+          <view>
+            <text decode="{{true}}">修&nbsp;&nbsp;改&nbsp;&nbsp;人：</text>
+            <text class='warn-color'>{{messageData.houseHistory.userName}}</text>
+          </view>
+          <view class='mt30'>
+            <text>修改时间：</text>
+            <text class='warn-color'>{{messageData.houseHistory.addTime}}</text>
+          </view>
+           <view class='mt30'>
+            <text>修改记录：</text>
+            <view style='padding-left:40rpx;'>
+              <text decode="{{true}}" class='warn-color'>{{messageData.houseHistory.record}}</text>
+            </view>           
+          </view>
+           <view class='mt30'>
+            <text>审核状态：</text>
+            <text class='warn-color'>未审核</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{type == 'KEY'}}">
+    <view class='fs30 pad-20'>
+      <text class='title-color'>钥匙信息</text>
+      <view class='pad-20 mt30 btn-container'>
+        <view class='all-width'>
+          <view>
+            <text>房源编号：</text>
+            <text class='warn-color'>{{messageData.house.id}}</text>
+          </view>
+        </view>
+        <view class='all-width'>
+          <view class='mt30'>
+            <text>钥匙编号：</text>
+            <text class='warn-color'>{{messageData.key.number}}</text>
+          </view>
+        </view>
+        <view class='add-width mt30'>
+          <view>
+            <text decode="{{true}}">小&nbsp;&nbsp;区&nbsp;&nbsp;名：</text>
+            <text class='warn-color'>{{messageData.house.communityName}}</text>
+          </view>
+          <view class='mt30'>
+            <text decode="{{true}}">经&nbsp;&nbsp;纪&nbsp;&nbsp;人：</text>
+            <text class='warn-color'>{{messageData.houseCheck.userName}}</text>
+          </view>
+           <view class='mt30'>
+            <text decode="{{true}}">装&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修：</text>
+            <text class='warn-color'>{{messageData.house.decorateStr}}</text>
+          </view>
+        </view>
+        <view class='add-width'>
+          <view class='mt30'>
+            <text decode="{{true}}">房&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</text>
+            <text class='warn-color'>{{messageData.house.bedroom}}-{{messageData.house.parlour}}-{{messageData.house.kitchen}}-{{messageData.house.washroom}}</text>
+          </view>
+          <view class='mt30'>
+            <text decode="{{true}}">面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积：</text>
+            <text class='warn-color'>{{messageData.house.acreage}}㎡</text>
+          </view>
+           <view class='mt30'>
+            <text decode="{{true}}">朝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;向：</text>
+            <text class='warn-color'>{{messageData.house.faceStr}}</text>
+          </view>
+        </view>
+        <view>
+          <view class='mt30'>
+            <text decode="{{true}}">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</text>
+            <text class='warn-color'>{{messageData.key.remark}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{type == 'JF_LOOK_ADD'}}">
+    <view class='fs30 pad-20'>
+      <text class='title-color'>带看信息</text>
+      <view class='mt30 pad-20 btn-container'>
+        <view class='all-width'>
+          <text decode="{{true}}">经&nbsp;&nbsp;纪&nbsp;&nbsp;人：</text>
+          <text class='warn-color'>{{messageData.customerCheck.userName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text decode="{{true}}">客&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;户：</text>
+          <text class='warn-color'>{{messageData.customer.custName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>联系方式：</text>
+          <text class='warn-color'>{{messageData.customer.contact}}</text>
+        </view>
+        <view class='all-width mt30 border-list'>
+          <text>带看时间：</text>
+          <text class='warn-color'>{{messageData.customerCheck.addTime}}</text>
+        </view>
+        <block wx:for="{{messageData.LookDetailList}}" wx:key="community">
+          <view class='all-width mt30'>
+            <text>小区编号：</text>
+            <text class='warn-color'>{{item.houseId}}</text>
+          </view>
+          <view class='all-width mt30'>
+            <text>小区名称：</text>
+            <text class='warn-color'>{{item.communityName}}</text>
+          </view>
+          <view class='all-width mt30 border-list'>
+            <text>客户反馈：</text>
+            <text class='warn-color'>{{item.feedback}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{type == 'JF_NEWLOOK_ADD'}}">
+    <view class='fs30 pad-20'>
+      <text class='title-color'>带看信息</text>
+      <view class='mt30 pad-20 btn-container'>
+        <view class='all-width'>
+          <text decode="{{true}}">经&nbsp;&nbsp;纪&nbsp;&nbsp;人：</text>
+          <text class='warn-color'>{{messageData.customerCheck.userName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text decode="{{true}}">客&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;户：</text>
+          <text class='warn-color'>{{messageData.customer.custName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>联系方式：</text>
+          <text class='warn-color'>{{messageData.customer.contact}}</text>
+        </view>
+        <view class='all-width mt30 border-list'>
+          <text>带看时间：</text>
+          <text class='warn-color'>{{messageData.customerCheck.addTime}}</text>
+        </view>
+        <block wx:for="{{messageData.LookDetailList}}">
+          <view class='all-width mt30'>
+            <text>小区编号：</text>
+            <text class='warn-color'>{{item.houseId}}</text>
+          </view>
+          <view class='all-width mt30'>
+            <text>小区名称：</text>
+            <text class='warn-color'>{{item.communityName}}</text>
+          </view>
+          <view class='all-width mt30 border-list'>
+            <text>客户反馈：</text>
+            <text class='warn-color'>{{item.feedback}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{type == 'EXCLUSIVE'}}">
+    <view>
+      独家审核
+    </view>
+  </block>
+  <view class='fs30 mt50 pad-20'>
+    <text class='title-color'>审核意见</text>
+    <input placeholder="请输入您的审核意见" bindinput="inputAdvice" class='account-input'/>
+    <view class='btn-container'>
+      <button type="primary" bindtap="bindAgree" class='account-btn' style='width:45%;'>通过</button>
+      <button type="warn" bindtap="bindRefuse" class='account-btn' style='width:45%;'>拒绝</button>
+    </view>
+  </view>
+  <view class='fs30 mt50 pad-20'>
+    <text class='title-color'>审核记录</text>
+    <block wx:for="{{recordData}}" wx:key="record">
+      <view class='btn-container pad-20 border-list mt30'>
+        <view class='all-width mt30'>
+          <text>审核信息：</text>
+          <text>{{item.remark}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>审核状态：</text>
+          <text wx:if="{{item.result == '1'}}" class='success-color'>通过</text>
+          <text wx:elif="{{item.result == '2'}}" class='warn-color'>拒绝</text>
+          <text wx:elif="{{item.result == '0'}}" class='warn-color'>未审核</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>审核人员：</text>
+          <text>{{item.auditerName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>审核时间：</text>
+          <text>{{item.checkTime}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

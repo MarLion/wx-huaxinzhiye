@@ -1,0 +1,53 @@
+{
+  "pages":[                  
+    "pages/logs/logs",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/attenList/attenList",
+    "pages/applyList/applyList",
+    "pages/applyDetail/applyDetail",
+    "pages/reviewList/reviewList",
+    "pages/attendDetail/attendDetail",
+    "pages/reviewDetail/reviewDetail",
+    "pages/reviewSignDetail/reviewSignDetail",
+    "pages/attenReviewList/attenReviewList",
+    "pages/attenReviewDetail/attenReviewDetail",
+    "pages/bussApplyList/bussApplyList",
+    "pages/bussApplyDetail/bussApplyDetail",
+    "pages/bussApplySignDetail/bussApplySignDetail",
+    "pages/attenApply/attenApply",
+    "pages/house/houseList/houseList",
+    "pages/house/houseDetail/housDetail",
+    "pages/house/houseKey/houseKey",
+    "pages/house/houseLook/houseLook",       
+    "pages/house/followup/followup",    
+    "pages/changePassword/changePassword",
+    "pages/changHead/changHead",
+    "pages/opeCharts/opeCharts",
+    "pages/house/communityMap/communityMap"    
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "华信置业",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color":"#7F7F7F",
+    "selectedColor":"#01C2AF",
+    "backgroundColor":"#ffffff",
+    "borderStyle":"white",
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text":"首页",
+      "iconPath": "image/tabbar_homepage.png",
+      "selectedIconPath": "image/tabbar_homepage_selected.png"
+    },{
+      "pagePath": "pages/mine/mine",
+      "text": "更多",
+      "iconPath": "image/tabbar_mine.png",
+      "selectedIconPath": "image/tabbar_mine_selected.png"
+    }
+    ]
+  }
+}

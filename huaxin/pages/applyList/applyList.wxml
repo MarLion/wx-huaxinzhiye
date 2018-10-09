@@ -1,0 +1,76 @@
+<view>
+  <view class='fs30 tab-container'>
+    <view class='tab-item {{currentTab==0?"tab-select":""}}' data-current='0'  bindtap='swichTab'>未审核</view>
+    <view class='tab-item {{currentTab==1?"tab-select":""}}' data-current='1'  bindtap='swichTab'>已审核</view>
+  </view>
+  <swiper current='{{currentTab}}' bindchange='swiperChange' style='height:{{winHeight}}rpx;'>
+    <swiper-item>
+       <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad"  bindscroll="scroll">
+        <block wx:for="{{reviewingList}}" wx:key="reviewing">
+          <view class='reviewing-container' data-audit-id='{{item.auditId}}' bindtap='toDetail'>
+            <view>
+              <text>{{item.leaveTypeStr}}</text>
+            </view>
+            <view class='fs30'>
+              <view>
+                <text>申请事由：</text>
+                <text>{{item.leaveRemark}}</text>
+              </view>
+              <view class='mt30'>
+                <text>开始时间：</text>
+                <text>{{item.begTime}}</text>
+              </view>
+              <view class='mt30'>
+                <text>结束时间：</text>
+                <text>{{item.endTime}}</text>
+              </view>
+              <view class='mt30'>
+                <text>申请时间：</text>
+                <text>{{item.addTime}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{noIngMore}}">
+          <view class='all-width fs30 mt30 text-center tip-color pad-b30'>
+            <text>没有更多了...</text>
+          </view>
+        </block> 
+       </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad"  bindscroll="scroll">
+        <block wx:for="{{reviewedList}}" wx:key="reviewed">
+          <view class='reviewing-container' data-audit-id='{{item.auditId}}' bindtap='toDetail'>
+            <view>
+              <text>{{item.leaveTypeStr}}</text>
+            </view>
+            <view class='fs30'>
+              <view>
+                <text>申请事由：</text>
+                <text>{{item.leaveRemark}}</text>
+              </view>
+              <view class='mt30'>
+                <text>申请时间：</text>
+                <text>{{item.addTime}}</text>
+              </view>
+              <view class='mt30'>
+                <text>审核时间：</text>
+                <text>{{item.checkTime}}</text>
+              </view>
+              <view class='mt30'>
+                <text>审核结果：</text>
+                <text>{{item.resultStr}}</text>
+              </view>
+            </view>
+        </view>
+      </block>
+      <block wx:if="{{noEdMore}}">
+        <view class='all-width fs30 mt30 text-center tip-color pad-b30'>
+          <text>没有更多了...</text>
+        </view>
+      </block> 
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

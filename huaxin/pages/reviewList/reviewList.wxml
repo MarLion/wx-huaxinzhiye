@@ -1,0 +1,39 @@
+<view class='bor-top'>
+  <block wx:for="{{reviewingList}}" wx:key="ing">
+    <view class='reviewing-container' bindtap="navigateToDetail" data-houseid='{{item.houseId}}' data-order-id='{{item.orderId}}' data-checkid='{{item.houseCheckId}}' data-order-audit="{{item.auditId}}" data-order-checkid='{{item.orderCheckId}}' data-customer-checkid='{{item.customerCheckId}}'>
+      <view>
+        <text>{{item.typeStr}}</text>
+      </view>
+      <view class='fs30'>
+        <view>
+          <text decode="{{true}}">申&nbsp;请&nbsp;人：</text>
+          <text wx:if="{{reviewType == 'HOUSE_ADD'}}">{{item.keeperName}}</text>
+          <text wx:elif="{{reviewType == 'HOUSE_UPDATE'}}">{{item.keeperName}}</text>
+          <text wx:elif="{{reviewType == 'KEY'}}">{{item.keeperName}}</text>
+          <text wx:elif="{{reviewType == 'EXCLUSIVE'}}">{{item.keeperName}}</text>
+          <text wx:elif="{{reviewType == 'PHOTO'}}">{{item.keeperName}}</text>
+          <text wx:elif="{{reviewType == 'JF_LOOK_ADD'}}">{{item.keeperName}}</text>
+          <text wx:elif="{{reviewType == 'JF_NEWLOOK_ADD'}}">{{item.keeperName}}</text>
+          <text wx:else>{{item.userName}}</text>
+        </view>
+        <view class='mt30'>
+          <text>申请时间：</text>
+          <text>{{item.addTime}}</text>
+        </view>
+        <view class='mt30'>
+          <text>审核类型：</text>
+          <text>{{item.typeStr}}</text>
+        </view>
+        <view class='mt30'>
+          <text>审核状态：</text>
+          <text class='warn-color'>未审核</text>
+        </view>
+      </view>
+    </view>
+  </block>
+   <block wx:if="{{noMore}}">
+          <view class='all-width fs30 mt30 text-center tip-color pad-b30'>
+            <text>没有更多了...</text>
+          </view>
+        </block> 
+</view>

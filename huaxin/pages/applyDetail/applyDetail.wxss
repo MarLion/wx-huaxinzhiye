@@ -1,0 +1,4 @@
+.border-list{
+  border-bottom: 1rpx solid #c9bfbfa4;
+  padding-bottom: 30rpx;
+}

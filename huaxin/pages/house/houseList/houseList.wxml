@@ -1,0 +1,164 @@
+<view class="houseListCom">
+  <!--查询框-->
+  <view class="top">
+    <view class="flex-wrp flex-direction-row">
+      <view class="w80">
+        <input placeholder="请输入房源信息"  class="input"  bindinput="houseInput" value=""/>
+      </view> 
+      <text bindtap = 'findHouse' class="findHouse">查找</text>   
+    </view>
+  <!--四大天王-->
+    <view class="flex-wrp flex-direction-row ">
+     <view class="flex-item select" bindtap='areaTap'>
+        <Text>地区</Text>
+      </view>
+      <view class="flex-item select" bindtap='priceTap'>
+        <Text>价格</Text>
+      </view>
+      <view class="flex-item select" bindtap='roomTap'>
+        <Text>面积</Text>
+      </view>
+      <view class="flex-item select" bindtap='moreTap'>
+        <Text>更多</Text>
+      </view>
+    </view>    
+  </view>
+    <!--弹出框-->
+    <!--区域弹出框-->
+    <scroll-view class='areaModal flex-wrp flex-direction-column' scroll-y wx:if="{{areashow}}">
+      <view class='areaoption'  wx:for='{{areaSelect}}' wx:key='this' data-index='{{index}}' data-val='{{item}}' bindtap='areaCheck'>
+        <text class="{{index == areaCheck ? 'activeArea':''}}">{{item}}</text>
+      </view>
+        
+    </scroll-view>
+    <!--售价弹出框-->
+    <view class="priceModal" wx:if="{{priceshow}}">
+      <!--买卖租赁筛选-->
+      <view class="flex-wrp flex-direction-row flex-wrap-wrap ml40 mr40" wx:if="{{houseDetail.houseType == 1}}">
+        <view wx:for='{{priceSelect}}' wx:key='this' data-index='{{index}}' data-val='{{item}}'  class="modalOption {{index == priceCheck ? 'active':''}}" bindtap='priceCheck'>
+          <text class="modalText {{index == priceCheck ? 'activeText':''}}" >{{item}}</text>
+        </view>
+      </view>
+
+      <view class="flex-wrp flex-direction-row flex-wrap-wrap ml40 mr40" wx:else>
+        <view wx:for='{{priceSentSelect}}' wx:key='this' data-index='{{index}}' data-val='{{item}}'  class="modalOption {{index == priceCheck ? 'active':''}}" bindtap='priceCheck'>
+          <text class="modalText {{index == priceCheck ? 'activeText':''}}" >{{item}}</text>
+        </view>
+      </view>
+      <!--买卖租赁筛选完-->
+      <view class="mt20">
+        <text class="modalInterval">价格区间</text>
+        <view class="flex-wrp flex-direction-row ml50">
+          <input type="text" placeholder="最低价" class="modalInput" bindinput="priceMin"></input>
+          <text>-</text>
+          <input type="text" placeholder="最高价" class="modalInput" bindinput="priceMax"></input>
+        </view>
+      </view>
+      <view class="flex-wrp flex-direction-row mt60">
+        <button type="default"  class="bottomInput" bindtap="priceCancel">取消</button>
+        <button type="primary"  class="bottomInput" bindtap="pricedetermine">确定</button>
+      </view>
+    </view>
+    <!--面积弹出框-->
+    <view class="roomModal" wx:if="{{roomshow}}">
+      <view class="flex-wrp flex-direction-row flex-wrap-wrap ml40 mr40">
+        <view wx:for='{{roomSelect}}' wx:key='this' data-index='{{index}}' data-val='{{item}}' bindtap='roomCheck' class="modalOption {{index == roomCheck ? 'active':''}}">
+          <text class="modalText {{index == roomCheck ? 'activeText':''}}">{{item}}</text>
+        </view>
+      </view>
+      <view class="mt20">
+        <text class="modalInterval">面积选择</text>
+        <view class="flex-wrp flex-direction-row ml50">
+          <input type="text" placeholder="最小面积" class="modalInput" bindinput="roomMin"></input>
+          <text>-</text>
+          <input type="text" placeholder="最大面积" class="modalInput" bindinput="roomMax"></input>
+        </view>
+      </view>
+      <view class="flex-wrp flex-direction-row mt60">
+        <button type="default"  class="bottomInput" bindtap="roomCancel">取消</button>
+        <button type="primary"  class="bottomInput" bindtap="roomdetermine">确定</button>
+      </view>
+    </view>
+    <!--更多弹出框-->
+    <scroll-view class="moreModal" scroll-y wx:if="{{moreshow}}">
+      <view class="moreBox">
+        <text class="textMore">房源状态</text>
+        <view class="flex-wrp flex-direction-row flex-wrap-wrap">
+          <view   wx:for='{{stateSelect}}' wx:key='this' data-index='{{index}}' data-val='{{item}}' bindtap='stateCheck' class="modalOption {{index == stateCheck ? 'active':''}}">
+            <text class="modalText {{index == stateCheck ? 'activeText':''}}">{{item}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="moreBox">
+        <text class="textMore">房型</text>
+        <view class="flex-wrp flex-direction-row flex-wrap-wrap">
+          <view  wx:for='{{bedroomSelect}}' wx:key='this' data-index='{{index}}' data-val='{{item}}' bindtap='bedroomCheck' class="modalOption {{index == bedroomCheck ? 'active':''}}">
+            <text class="modalText {{index == bedroomCheck ? 'activeText':''}}">{{item}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="moreBox">
+        <text class="textMore">朝向</text>
+        <view class="flex-wrp flex-direction-row flex-wrap-wrap">
+          <view  wx:for='{{faceSelect}}' wx:key='this' data-index='{{index}}' data-val='{{item}}' bindtap='faceCheck' class="modalOption {{index == faceCheck ? 'active':''}}">
+            <text class="modalText {{index == faceCheck ? 'activeText':''}}">{{item}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="moreBox">
+        <text class="textMore">来源</text>
+        <view class="flex-wrp flex-direction-row flex-wrap-wrap">
+          <view  wx:for='{{entrustTypeSelect}}' wx:key='this' data-index='{{index}}' data-val='{{item}}' bindtap='entrustTypeCheck' class="modalOption {{index == entrustTypeCheck ? 'active':''}}">
+            <text class="modalText {{index == entrustTypeCheck ? 'activeText':''}}">{{item}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="flex-wrp flex-direction-row mt40 mb40">
+        <button type="default"  class="bottomInput" bindtap="moreCancel">取消</button>
+        <button type="primary"  class="bottomInput" bindtap="moredetermine">确定</button>
+      </view>
+    </scroll-view>
+ 
+  <!--列表-->
+  <view class="list">
+    <block wx:for="{{houseList}}" wx:key="item">
+      <view data-house-id='{{item.id}}' bindtap='toDetail'>
+          <view class='flex-wrp flex-direction-row listBox'>
+            <!--图片-->
+            <view class="photo">
+              <image src="{{ head + centerSrc + src + item.id + '/'+ item.photo.path + '&' +'openId='+ openId}}" class="photoImg" wx:if="{{item.photo}}"></image>
+              <view class="photoText" wx:else>
+                <text class="nonePhoto" >华信地产</text>
+              </view>             
+            </view>
+            <!--信息-->
+            <view class='flex-direction-column news'>
+              <view class="textBox">
+                <text class="text">{{item.communityName}}</text>
+              </view>
+              <view class="mt10">
+                <text class="bedroom" wx:if="{{item.bedroom}}">{{item.bedroom}}室</text>
+                <text class="parlour" wx:if="{{item.parlour}}">{{item.parlour}}厅</text>
+                <text class="kitchen" wx:if="{{item.kitchen}}">{{item.kitchen}}厨</text>
+                <text class="washroom" wx:if="{{item.washroom}}">{{item.washroom}}卫</text>
+                <text class="area" wx:if="{{item.acreage}}">{{item.acreage}}㎡</text>
+                <text class="direction" wx:if="{{item.faceStr}}">{{item.faceStr}}</text>
+              </view>
+              <view class="totalpriceBox" wx:if="{{houseDetail.houseType == 1}}">
+                <text class="totalprice">{{item.sellTotalPrice/10000}}万</text>
+                <text class="price">{{item.sellUnitPrice}}元/㎡</text>
+              </view>
+              <view class="totalpriceBox" wx:else>
+                <text class="totalprice">{{item.rentTotalPrice}}元</text>
+                <!--<text class="price">{{item.rentUnitPrice}}元/㎡</text>-->
+              </view>
+            </view>
+            <!--信息完-->
+          </view>                  
+      </view>
+    </block>
+  </view>
+</view>

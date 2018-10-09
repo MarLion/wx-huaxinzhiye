@@ -1,0 +1,62 @@
+<view class="fs30 pad-20 pad-b30">
+  <view class='mt30'>
+      <text class='title-color'>考勤信息</text>
+  </view>
+  <view class='mt30 pad-20'>
+    <view>
+      <text decode="{{true}}">日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期：</text>
+      <text>{{date}}</text>
+    </view>
+    <view class='mt30'>
+      <text>上班打卡：</text>
+      <text>{{begTime}}</text>
+    </view>
+    <view class='mt30'>
+      <text>下班打卡：</text>
+      <text>{{endTime}}</text>
+    </view>
+    <view class='mt30'>
+      <text>异常类型：</text>
+      <text class='warn-color'>{{str}}</text>
+    </view>
+  </view>
+  <view class='mt50'>
+      <text class='title-color'>考勤处理申请表</text>
+  </view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class='mt30'>
+    <view class='section'>
+      <view class='pick-tit'>申请类型（点击选择）：</view>
+      <view class="picker">{{array[index]}}</view>
+    </view>
+  </picker>
+  <form bindsubmit="formSubmit">
+    <block wx:if="{{applyType == '1'}}">
+      <radio-group class="radio-group" bindchange="radioChange" name="leaveType" class="mt30 pad-20">
+        <label wx:for="{{vicalation}}" wx:key="radio1">
+          <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.text}}
+        </label>
+      </radio-group>
+    </block>
+    <block wx:elif="{{applyType == '2'}}">
+     <radio-group class="radio-group" bindchange="radioChange" name="leaveType" class="mt30">
+        <label wx:for="{{unusual}}" wx:key="radio1">
+          <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.text}}
+        </label>
+      </radio-group>
+    </block>
+    <view class="mt30">
+      <text>开始时间：</text>
+      <input name="begTime" value="{{begValue}}" class='account-input'/>
+    </view>
+    <view class="">
+      <text>结束时间:</text>
+      <input name="endTime" value="{{endValue}}" class='account-input'/>
+    </view>
+    <view>
+      <text>事由：</text>
+      <input name="leaveRemark" placeholder='请输入事由' class='account-input'/>
+    </view>
+    <button formType="submit" type='primary' class='account-btn'>确定</button>
+    <button type='warn' class='account-btn' bindtap='cancle'>取消</button>
+  </form>
+</view>

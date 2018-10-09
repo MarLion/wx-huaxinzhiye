@@ -1,0 +1,38 @@
+.icon-image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 75rpx;
+}
+.more-container{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.item{
+  width: 250rpx;
+  margin-top: 50rpx;
+}
+.item text{
+  width: 100%;
+  text-align: center;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}
+.tab-item{
+  width: 25%;
+  display: inline-block;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.tab-container{
+  border-bottom: 1rpx solid #05C9D3;
+}
+.tab-select{
+  background-color: #05C9D3;
+  color: #ffffff;
+}

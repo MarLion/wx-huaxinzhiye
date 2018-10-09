@@ -1,0 +1,44 @@
+<view class='bor-top'>
+  <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad"  bindscroll="scroll">
+  <block wx:for="{{list}}" wx:key="list">
+    <view class='container' data-choose-month='{{item.workDateStr}}' data-user-id='{{item.userId}}' bindtap='bindViewTap'>
+      <view>
+        <text>{{item.modelStatuStr}}</text>
+      </view>
+      <view class='fs30'>
+        <view>
+          <text>应出勤：</text>
+          <text>{{item.mustAtendDays}}</text>
+        </view>
+        <view class='mt30'>
+          <text>正常出勤：</text>
+          <text>{{item.factAtendDays}}</text>
+        </view>
+        <view class='mt30'>
+          <text>缺勤：</text>
+          <text>{{item.lackAtendDays}}</text>
+        </view>
+      </view>
+      <view class='fs30'>
+        <view>
+          <text>休假：</text>
+          <text>{{item.restDays}}</text>
+        </view>
+        <view class='mt30'>
+          <text>迟到：</text>
+          <text>{{item.comeLateDays}}</text>
+        </view>
+        <view class='mt30'>
+          <text>早退：</text>
+          <text>{{item.leaveEarlyDays}}</text>
+        </view>
+      </view>  
+  </view>
+  </block> 
+  <block wx:if="{{noMore}}">
+    <view class='all-width fs30 mt30 text-center tip-color'>
+      <text>没有更多了...</text>
+    </view>
+  </block>
+  </scroll-view> 
+</view>

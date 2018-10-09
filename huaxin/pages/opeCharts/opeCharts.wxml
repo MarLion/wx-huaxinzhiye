@@ -1,0 +1,79 @@
+<view class='fs30'>
+  <view class='tab-container'>
+    <view class='tab-item {{currentTab==0?"tab-select":""}}' data-current='0'  bindtap='swichTab'>买卖房源</view>
+    <view class='tab-item {{currentTab==1?"tab-select":""}}' data-current='1'  bindtap='swichTab'>租赁房源</view>
+    <view class='tab-item {{currentTab==2?"tab-select":""}}' data-current='2'  bindtap='swichTab'>客源</view>
+  </view>
+  <swiper current='{{currentTab}}' bindchange='swiperChange' style='height:{{winHeight}}rpx;'>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <picker bindchange="bindPickerChange" value="{{sellIndex}}" range="{{sellArray}}" class='mt30 pad-20'>
+          <view class='section'>
+            <view class='pick-tit'>操作类型（点击选择）：</view>
+            <view class="picker">{{sellArray[sellIndex]}}</view>
+          </view>
+        </picker>
+        <view class="container mt30">
+          <ec-canvas id="mychart-dom-sellHouse-pie" canvas-id="mychart-sellHouse-pie" ec="{{ecSell}}"></ec-canvas>
+        </view>  
+        <view class='mt30 pad-25'>
+          <view class='t-container'>
+            <block wx:for="{{sellTable}}" wx:key="sellTable">
+                <view class='item' data-tag-id='{{item.id}}' data-tag-type='{{item.type}}'>
+                  <view>{{item.name}}</view>
+                  <view>{{item.value}}个{{sellArray[sellIndex]}}</view>
+                  
+                </view>
+            </block>
+          </view> 
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <picker bindchange="rentPickerChange" value="{{rentIndex}}" range="{{rentArray}}" class='mt30 pad-20'>
+          <view class='section'>
+            <view class='pick-tit'>操作类型（点击选择）：</view>
+            <view class="picker">{{rentArray[rentIndex]}}</view>
+          </view>
+        </picker>
+        <view class="container mt30">
+          <ec-canvas id="mychart-dom-rentHouse-pie" canvas-id="mychart-rentHouse-pie" ec="{{ecRecent}}"></ec-canvas>
+        </view>  
+        <view class='mt30 pad-25'>
+          <view class='t-container'>
+            <block wx:for="{{rentTable}}" wx:key="rentTable">
+                <view class='item'>
+                  <view>{{item.name}}</view>
+                  <view>{{item.value}}个{{rentArray[rentIndex]}}</view>
+                </view>
+            </block>
+          </view> 
+        </view> 
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+      <picker bindchange="cusPickerChange" value="{{cusIndex}}" range="{{cusArray}}" class='mt30 pad-20'>
+          <view class='section'>
+            <view class='pick-tit'>操作类型（点击选择）：</view>
+            <view class="picker">{{cusArray[cusIndex]}}</view>
+          </view>
+        </picker>
+        <view class="container mt30">
+          <ec-canvas id="mychart-dom-cusHouse-pie" canvas-id="mychart-cusHouse-pie" ec="{{ecCustomer}}"></ec-canvas>
+        </view>   
+        <view class='mt30 pad-25'>
+          <view class='t-container'>
+            <block wx:for="{{cusTable}}" wx:key="cusTable">
+                <view class='item'>
+                  <view>{{item.name}}</view>
+                  <view>{{item.value}}个{{cusArray[cusIndex]}}</view>
+                </view>
+            </block>
+          </view> 
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>                                                                                                                              

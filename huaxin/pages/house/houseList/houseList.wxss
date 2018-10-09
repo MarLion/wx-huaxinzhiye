@@ -1,0 +1,222 @@
+/* pages/house/houseList/houseList.wxss */
+.houseListCom{
+  font-size:28rpx;
+  color:#333;
+}
+.top{
+  position:fixed;
+  top:0rpx;
+  width:100%;
+  background-color:#fff;
+  z-index:9;
+}
+/*弹出框样式*/
+.select{
+  justify-content:center;
+  width:25%;
+  text-align:center;
+  height:100rpx;
+  line-height:100rpx;
+}
+.input{
+  background-color:#f9f9f9;
+  height:40px;
+  width:90%;
+  margin:0 auto;
+  padding-left:20rpx;
+}
+.w80{
+  width:80%;
+}
+.findHouse{
+  width:120rpx;
+  height:72rpx;
+  background-color:#eee;
+  color:#666;
+  border-radius:10rpx;
+  line-height:72rpx;
+  text-align:center;
+  margin-left:20rpx;
+
+}
+.areaModal{
+  height:650rpx;
+  width:100%;
+  position:fixed;
+  z-index:9;
+  background-color:#fff;
+  top:170rpx;
+}
+.areaoption{
+  height:80rpx;
+  line-height:80rpx;
+  border-bottom:1px solid #ddd;
+  margin-right:40rpx;
+  margin-left:40rpx;
+  padding-left:20rpx;
+}
+.priceModal{
+  height:500rpx;
+  width:100%;
+  position:fixed;
+  z-index:9;
+  background-color:#fff;
+  top:170rpx;
+}
+.roomModal{
+  height:500rpx;
+  width:100%;
+  position:fixed;
+  z-index:9;
+  background-color:#fff;
+  top:170rpx;
+}
+.moreModal{
+  height:700rpx;
+  width:100%;
+  position:fixed;
+  z-index:9;
+  background-color:#fff;
+  top:170rpx;
+}
+.modalOption{
+  width:22%;
+  height:60rpx;
+  line-height:60rpx;
+  text-align:center;
+  margin:10rpx; 
+  border-radius:5px;
+  background-color:#f9f9f9;  
+}
+.modalText{
+  font-size:24rpx;
+  color:#666;
+}
+.modalInput{
+  border:1px solid #cdcdcd;
+  width:250rpx;
+  height:40rpx;
+  margin-right:20rpx;
+  margin-left:20rpx;
+  padding-left:20rpx;
+}
+.modalInterval{
+  margin-left:60rpx;
+  height:100rpx;
+  line-height:100rpx;
+  font-size:30rpx;
+}
+.bottomInput{
+  width:30%;
+  height:60rpx;
+  line-height:60rpx;
+  font-size:28rpx;
+}
+.textMore{
+  height:80rpx;
+  line-height:80rpx;
+  font-size:32rpx;
+}
+.moreBox{
+  border-bottom:1px solid #ddd;
+  margin-right:40rpx;
+  margin-left:40rpx;
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+  padding-bottom:40rpx;
+}
+.active{
+  background-color:#51C332;
+}
+.activeText{
+  color:#fff;
+}
+.activeArea{
+  color:#51C332;
+}
+
+/*列表样式*/
+.list{
+  margin:0 40rpx;
+  margin-top:150rpx;
+}
+.listBox{
+  border-bottom:1px solid #ddd;
+  padding-top:40rpx;
+  padding-bottom:40rpx;
+}
+.photo{
+  width:200rpx;
+  height:150rpx;
+  margin-right:40rpx;
+}
+.photoImg{
+  width:200rpx;
+  height:150rpx;
+}
+.photoText{
+  width:200rpx;
+  height:150rpx;
+  border:1px solid #ddd;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:#f9f9f9;
+}
+.nonePhoto{
+  color:#428282;
+  font-size:36rpx;
+  font-weight:700;
+}
+.text{
+  font-size:32rpx;
+  margin-right:20rpx;
+}
+.textBox{
+  margin-bottom:10rpx;
+}
+
+.bedroom{
+  font-size:24rpx;
+  color:#999;
+}
+.parlour{
+  font-size:24rpx;
+  color:#999;
+}
+.kitchen{
+  font-size:24rpx;
+  color:#999;
+}
+.washroom{
+  font-size:24rpx;
+  color:#999;
+  margin-right:20rpx;
+}
+.area{
+  font-size:24rpx;
+  color:#999;
+  margin-right:20rpx;
+}
+.direction{
+  font-size:24rpx;
+  color:#999;
+  margin-right:20rpx;
+}
+.totalprice{
+  font-size:32rpx;
+  margin-right:20rpx;
+  color:chocolate;
+}
+.totalpriceBox{
+  margin-top:20rpx;
+}
+.price{
+  font-size:22rpx;
+  color:#999;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

@@ -1,0 +1,116 @@
+<!--pages/house/houseDetail/housDetail.wxml-->
+<view class="houseDetail">
+  <!--房源相关信息-->
+  <view >
+    <!--轮播图-->   
+    <swiper indicator-dots="true" style='height:450rpx;width:100%;'>
+         <block wx:for="{{photoList}}" wx:key="item">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="scoll-h">
+                <image src="{{ head + centerSrc + src + item.houseId + '/'+ item.path + '&' +'openId='+ openId}}" class="photo" bindtap='bigImg' mode="aspectFill" data-url="{{ head + centerSrc + src + item.houseId + '/'+ item.path + '&' +'openId='+ openId}}"/>
+              </scroll-view>
+            </swiper-item>
+          </block>
+      </swiper>  
+    <!--大字介绍--> 
+    <view>  
+      <view class="flex-wrp flex-direction-row justify-content-space-around centerBox">
+        <view class="center" wx:if="{{houseDetail.houseType == 1}}"><text class="text3">售价</text><text class="text4" >{{houseDetail.sellTotalPrice/10000}}万</text></view>
+        <view class="center" wx:else><text class="text3">租价</text><text class="text4" >{{houseDetail.rentTotalPrice}}元</text></view>
+        <view class="center">
+          <text class="text3">房型</text>
+          <view class="text4">
+                <text class="bedroom" wx:if="{{item.bedroom}}">{{houseDetail.bedroom}}室</text>
+                <text class="parlour" wx:if="{{item.parlour}}">{{houseDetail.parlour}}厅</text>
+                <text class="kitchen" wx:if="{{item.kitchen}}">{{houseDetail.kitchen}}厨</text>
+                <text class="washroom" wx:if="{{item.washroom}}">{{houseDetail.washroom}}卫</text>
+          </view>
+        </view>
+        <view class="center"><text class="text3">建筑面积</text><text class="text4">{{houseDetail.acreage}}㎡</text></view>
+      </view>
+      
+    </view>
+    <!--基本信息-->
+    <view class="bigTile">
+        <text class="text9">{{houseDetail.communityName}}</text>
+    </view>
+    <view >
+      <!--<text class="text5">基本信息</text>-->
+      <view class="centerBox2">
+        <view>
+          <text class="text1">房源编号:</text>
+          <text class="text2">{{houseDetail.id}}</text>
+        </view>
+        <!--中间两块-->
+        <view class="flex-wrp flex-direction-row ">
+          <view class="w50">            
+            <view class="info" wx:if="{{houseDetail.houseType == 1}}">
+              <text class="text1" >单价:</text><text class="text2">{{houseDetail.sellUnitPrice}}元/㎡</text>             
+            </view>
+            <view class="info" wx:else>
+              <text class="text1" >单价:</text><text class="text2">{{houseDetail.rentUnitPrice}}元/㎡</text>
+            </view>
+            <view class="info">
+              <text class="text1">朝向:</text><text class="text2">{{houseDetail.faceStr}}</text>
+            </view>
+            <view class="info">
+              <text class="text1">楼层:</text><text class="text2">{{houseDetail.floor}}({{houseDetail.floor}}/{{houseDetail.totalFloor}})</text>
+            </view>
+            <view class="info">
+              <text class="text1">用途:</text><text class="text2">{{houseDetail.useTypeStr}}</text>
+            </view>
+            <view class="info">
+              <text class="text1">来源:</text><text class="text2">{{houseDetail.entrustTypeStr}}</text>
+            </view>
+            <view class="info">
+              <text class="text1">维护人:</text><text class="text2">{{houseDetail.userName}}</text>
+            </view>                    
+          </view>
+          <view class="w50">            
+            <view class="info">
+              <text class="text1">交易类型:</text><text class="text2">{{houseDetail.houseTypeStr}}</text>
+            </view>
+            <view class="info">
+              <text class="text1">证件信息:</text><text class="text2">{{houseDetail.houseCertificateStr}}</text>
+            </view>
+            <view class="info">
+              <text class="text1">房源状态:</text><text class="text2">{{houseDetail.actualityStr}}</text>
+            </view>
+            <view class="info">
+              <text class="text1">装修情况:</text><text class="text2">{{houseDetail.decorateStr}}</text>
+            </view>
+            <view class="info">
+              <text class="text1">家具情况:</text><text class="text2">{{houseDetail.houseFurnitureStr}}</text>
+            </view>
+            <view class="info">
+              <text class="text1">是否优选:</text><text class="text2">{{houseDetail.pubPriTypeStr}}</text>
+            </view>           
+          </view>
+        </view>
+        <!--中间两块-->
+        <view >
+          <text class="text1">挂牌时间:</text><text class="text2">{{houseDetail.addTime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--小区相关信息-->
+  <!--<view class="foot2">
+    <text class="text6">更多小区信息</text>
+  </view>-->
+  <!--跟进-->
+  <view class="foot" data-house-id='{{item.id}}' bindtap='toFollow'>
+    <text class="text7">跟进</text>
+    <text class="text8">. . .</text>
+  </view>
+  <!--带看-->
+  <view class="foot" bindtap='toLook'>
+    <text class="text7" >带看</text>
+    <text class="text8">. . .</text>
+  </view>
+  <!--钥匙-->
+  <view class="foot" bindtap='tokey'>
+    <text class="text7" >钥匙</text>
+    <text class="text8">. . .</text>
+  </view>
+</view>

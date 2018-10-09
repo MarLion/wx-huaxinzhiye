@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items:center;
+  border-bottom: 1rpx solid #c9bfbfa4;
+  padding: 30rpx 0;
+}
+.bor-top{
+  border-top: 1rpx solid #c9bfbfa4;
+}

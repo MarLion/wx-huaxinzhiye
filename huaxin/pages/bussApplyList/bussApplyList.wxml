@@ -1,0 +1,30 @@
+<view class='bor-top'>
+  <scroll-view scroll-y="true" style='height:{{winHeight}}rpx;' bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad"  bindscroll="scroll">
+    <block wx:for="{{applyList}}" wx:key="buss">
+      <view class='reviewing-container' bindtap="navigateToDetail" data-type='{{item.type}}' data-houseid='{{item.houseId}}' data-order-id='{{item.houseId}}' data-checkid='{{item.houseCheckId}}' data-order-audit="{{item.auditId}}" data-order-checkid='{{item.houseCheckId}}' data-customer-checkid='{{item.houseCheckId}}'>
+        <view>
+          <text>{{item.typeStr}}</text>
+        </view>
+        <view class='fs30'>
+          <view class='mt30'>
+            <text>申请类型：</text>
+            <text>{{item.typeStr}}</text>
+          </view>
+          <view class='mt30'>
+            <text>申请时间：</text>
+            <text>{{item.addTime}}</text>
+          </view>
+          <view class='mt30'>
+            <text>审核人员：</text>
+            <text>{{item.auditerName}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{noMore}}">
+      <view class='all-width fs30 mt30 text-center tip-color pad-b30'>
+        <text>没有更多了...</text>
+      </view>
+    </block>
+  </scroll-view>
+</view>

@@ -1,0 +1,386 @@
+<view class='fs30 pad-bot'>
+  <view class='pad-20'>
+    <text class="title-color">房屋信息</text>
+    <view class='pad-20 mt30 sign-container'>
+      <view class='add-width'>
+        <view>
+          <text>房型：</text>
+          <text class='warn-color'>{{houseData.house.bedroom}}-{{houseData.house.parlour}}-{{houseData.house.kitchen}}-{{houseData.house.washroom}}</text>
+        </view>
+        <view class='mt30'>
+          <text>面积：</text>
+          <text class='warn-color'>{{houseData.house.acreage}}㎡</text>
+        </view>
+        <view class='mt30'>
+          <text>朝向：</text>
+          <text class='warn-color'>{{houseData.house.faceStr}}</text>
+        </view>
+        <view class='mt30'>
+          <text>类型：</text>
+          <text class='warn-color'>{{houseData.house.houseTypeStr}}</text>
+        </view>
+        <view class='mt30'>
+          <text>楼层：</text>
+          <text class='warn-color'>{{houseData.house.floor}}</text>
+        </view>
+        <view class='mt30'>
+          <text>装修：</text>
+          <text class='warn-color'>{{houseData.house.decorateStr}}</text>
+        </view>
+        <view class='mt30'>
+          <text>套内：</text>
+          <text class='warn-color'></text>
+        </view>
+      </view>
+      <view class='add-width'>
+        <view>
+          <text>状态：</text>
+          <text class='warn-color'>{{houseData.house.actualityStr}}</text>
+        </view>
+        <view class='mt30'>
+          <text>用途：</text>
+          <text class='warn-color'>{{houseData.house.useTypeStr}}</text>
+        </view>
+        <view class='mt30'>
+          <text>家电：</text>
+          <text class='warn-color'>{{houseData.house.houseElectricStr}}</text>
+        </view>
+        <view class='mt30'>
+          <text>家具：</text>
+          <text class='warn-color'>{{houseData.house.houseFurnitureStr}}</text>
+        </view>
+        <view class='mt30'>
+          <text>来源：</text>
+          <text class='warn-color'>{{houseData.house.entrustTypeStr}}</text>
+        </view>
+        <view class='mt30'>
+          <text>付款：</text>
+          <text class='warn-color'></text>
+        </view>
+        <view class='mt30'>
+          <text>付佣：</text>
+          <text class='warn-color'></text>
+        </view>
+      </view>
+      <view class='all-width'>
+        <view class='mt30'>
+          <text>产权：</text>
+          <text class='warn-color'>{{houseData.house.housePropertyStr}}</text>
+        </view>
+    </view>
+      <view class='all-width'>
+        <view class='mt30'>
+          <text>挂牌时间：</text>
+          <text class='warn-color'>{{houseData.house.addTime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='pad-20 mt50'>
+    <text class="title-color">客户基本信息</text>
+    <view class='pad-20 mt30 sign-container'>
+      <view class='all-width'>
+        <view>
+          <text decode="{{true}}">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</text>
+          <text class='warn-color'>{{messData.buyer.name}}</text>
+        </view>
+        <view class='mt30'>
+          <text decode="{{true}}">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</text>
+          <text class='warn-color'>{{messData.buyer.mobile}}</text>
+        </view>
+        <view class='mt30'>
+          <text>贷款记录：</text>
+          <text class='warn-color'>{{messData.buyer.loanRecord}}</text>
+        </view>
+        <view class='mt30'>
+          <text>身份证号：</text>
+          <text class='warn-color'>{{messData.buyer.idCard}}</text>
+        </view>
+        <view class='mt30'>
+          <text>名下房产：</text>
+          <text class='warn-color'>{{messData.buyer.personHouse}}</text>
+        </view>
+        <view class='mt30'>
+          <text>现居地址：</text>
+          <text class='warn-color'>{{messData.buyer.address}}</text>
+        </view>
+      </view>    
+    </view>
+  </view>
+  <view class='pad-20 mt50'>
+    <text class="title-color">业主基本信息</text>
+    <view class='pad-20 mt30 sign-container'>
+      <view class='all-width'>
+        <view>
+          <text decode="{{true}}">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</text>
+          <text class='warn-color'>{{messData.seller.name}}</text>
+        </view>
+        <view class='mt30'>
+          <text decode="{{true}}">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</text>
+          <text class='warn-color'>{{messData.seller.mobile}}</text>
+        </view>
+        <view class='mt30'>
+          <text>贷款记录：</text>
+          <text class='warn-color'>{{messData.seller.loanRecord}}</text>
+        </view>
+        <view class='mt30'>
+          <text>身份证号：</text>
+          <text class='warn-color'>{{messData.seller.idCard}}</text>
+        </view>
+        <view class='mt30'>
+          <text>名下房产：</text>
+          <text class='warn-color'>{{messData.seller.personHouse}}</text>
+        </view>
+        <view class='mt30'>
+          <text>现居地址：</text>
+          <text class='warn-color'>{{messData.seller.address}}</text>
+        </view>
+      </view>    
+    </view>
+  </view> 
+  <view class='pad-20 mt50'>
+    <text class="title-color">房屋情况</text>
+    <view class='pad-20 mt30 sign-container'>
+      <view class='all-width'>
+        <view>
+          <text>合同编号：</text>
+          <text class='warn-color'>{{messData.order.contractNo}}</text>
+        </view>
+        <view class='mt30'>
+          <text>物业类型：</text>
+          <text class='warn-color'>{{messData.order.houseUseType}}</text>
+        </view>
+        <view class='mt30'>
+          <text>产证面积：</text>
+          <text class='warn-color'>{{messData.order.useAcreage}}/㎡</text>
+        </view>
+        <view class='mt30'>
+          <text>物业地址：</text>
+          <text class='warn-color'>{{messData.order.houseAddress}}</text>
+        </view>
+      </view>    
+    </view>
+  </view>
+  <view class='pad-20 mt50'>
+    <text class="title-color">金额情况</text>
+    <view class='pad-20 mt30 sign-container'>
+      <view class='all-width'>
+        <block wx:if="{{isRent == 1}}">
+          <view>
+            <text>成交总价：</text>
+            <text class='warn-color'>{{messData.order.totalPrice}}</text>
+          </view>
+          <view class='mt30'>
+            <text>收佣比例：</text>
+            <text class='warn-color'>2%</text>
+          </view>
+          <view class='mt30'>
+            <text>实收物业保证金：</text>
+            <text class='warn-color'>{{messData.order.securityBrokerage}}</text>
+          </view>
+        </block>
+        <block wx:else>
+          <view>
+            <text>成交总价：</text>
+            <text class='warn-color'>{{messData.order.totalPrice}}</text>
+          </view>
+          <view class='mt30'>
+            <text>收佣比例：</text>
+            <text class='warn-color'>50%</text>
+          </view>
+          <view class='mt30'>
+            <text>押金金额：</text>
+            <text class='warn-color'>{{messData.order.deposit}}</text>
+          </view>
+          <view class='mt30'>
+            <text decode="{{true}}">租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期：</text>
+            <text class='warn-color'>{{messData.order.begTimeValid}}至{{messData.order.endTimeValid}}</text>
+          </view>
+        </block>
+      </view>    
+    </view>
+  </view>
+  <view class='pad-20 mt50'>
+    <text class="title-color">佣金情况</text>
+    <view class='pad-20 mt30 sign-container'>
+      <block wx:if="{{isRent == 1}}">
+        <view class='add-width'>
+          <view>
+            <text>应收客户佣金：</text>
+            <text class='warn-color'>{{messData.order.receivableBrokerageBuyer}}</text>
+          </view>
+          <view class='mt30'>
+            <text>外拆金额：</text>
+            <text class='warn-color'>{{messData.order.otherBrokerage}}</text>
+          </view>
+          <view class='mt30'>
+            <text>评估费：</text>
+            <text class='warn-color'>{{messData.order.valuationFee}}</text>
+          </view>
+          <view class='mt30'>
+            <text>其他费用：</text>
+            <text class='warn-color'>{{messData.order.otherFee}}</text>
+          </view>
+          <view class='mt30'>
+            <text>其他成本：</text>
+            <text class='warn-color'>{{messData.order.otherCost}}</text>
+          </view>
+        </view>
+        <view class='add-width'>
+          <view>
+            <text>实收：</text>
+            <text class='warn-color'>{{messData.order.actualBrokerageBuyer}}</text>
+          </view>
+          <view class='mt30'>
+            <text>实收佣金总额：</text>
+            <text class='warn-color'>{{messData.order.actualTotal}}</text>
+          </view>
+          <view class='mt30'>
+            <text>担保费：</text>
+            <text class='warn-color'>{{messData.order.securityFee}}</text>
+          </view>
+          <view class='mt30'>
+            <text>成本：</text>
+            <text class='warn-color'>{{messData.order.costFee}}</text>
+          </view>
+          <view class='mt30'>
+            <text>实际总业绩：</text>
+            <text class='warn-color'>{{messData.order.actualResult}}</text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='add-width'>
+          <view>
+            <text>应收客户佣金：</text>
+            <text class='warn-color'>{{messData.order.receivableBrokerageBuyer}}</text>
+          </view>
+          <view class='mt30'>
+            <text>实收佣金总额：</text>
+            <text class='warn-color'>{{messData.order.actualTotal}}</text>
+          </view>
+          <view class='mt30'>
+            <text>实收业主佣金：</text>
+            <text class='warn-color'>{{messData.order.actualResult}}</text>
+          </view>
+        </view>
+        <view class='add-width'>
+          <view>
+            <text>实收客户佣金：</text>
+            <text class='warn-color'>{{messData.order.actualBrokerageBuyer}}</text>
+          </view>
+          <view class='mt30'>
+            <text>应收业主佣金：</text>
+            <text class='warn-color'>{{messData.order.actualBrokerageSeller}}</text>
+          </view>
+          <view class='mt30'>
+            <text>外拆金额：</text>
+            <text class='warn-color'>{{messData.order.otherBrokerage}}</text>
+          </view>
+        </view>
+      </block> 
+    </view>
+  </view>  
+  <view class='pad-20 mt50'>
+    <text class="title-color">分成人信息</text>
+    <block wx:for="{{osList}}" wx:key="os">
+      <view class='sign-container pad-20 border-list mt30'>
+        <view class='all-width mt30'>
+          <text decode="{{true}}">名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</text>
+          <text class='warn-color'>{{item.userName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>角色类型：</text>
+          <text class='warn-color'>{{item.operationTypeStr}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>拆拥比例：</text>
+          <text class='warn-color'>{{item.performanceScale*100}}%</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>个人业绩：</text>
+          <text class='warn-color'>{{item.performance}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text decode="{{true}}">增&nbsp;&nbsp;减&nbsp;&nbsp;项：</text>
+          <text class='warn-color'>{{item.otherPerformance}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text decode="{{true}}">组&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：</text>
+          <text class='warn-color'>{{item.groupName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text decode="{{true}}">组&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长：</text>
+          <text class='warn-color'>{{item.groupUserName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>所属部门：</text>
+          <text class='warn-color'>{{item.deptName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>门店经理：</text>
+          <text class='warn-color'>{{item.deptUserName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text decode="{{true}}">大&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：</text>
+          <text class='warn-color'>{{item.areaName}}</text>
+        </view>
+        <view class='all-width mt30'>
+          <text>大区经理：</text>
+          <text class='warn-color'>{{item.areaUserName}}</text>
+        </view>
+      </view>
+    </block>
+  </view> 
+  <view class='pad-20 mt50'>
+    <text class="title-color">图片附件</text>
+    <swiper class='mt30' indicator-dots="true" style='height:350rpx;'>
+         <block wx:for="{{imgData}}" wx:key="ph">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="scoll-h">
+                <image src="{{item.url}}" data-url='{{item.url}}' class="slide-image" bindtap='bigImg' style='height:{{item.height}}rpx'/>
+              </scroll-view>
+            </swiper-item>
+          </block>
+      </swiper>
+  </view>
+  <view class='fs30 mt50 pad-20'>
+    <text class='title-color'>审核意见</text>
+    <input placeholder="请输入您的审核意见" bindinput="inputAdvice" class='account-input'/>
+    <view class='btn-container'>
+      <button type="primary" bindtap="bindAgree" class='account-btn' style='width:45%;'>通过</button>
+      <button type="warn" bindtap="bindRefuse" class='account-btn' style='width:45%;'>拒绝</button>
+    </view>
+  </view>
+  <view class='fs30 mt50 pad-20'>
+    <text class='title-color'>审核记录</text>
+    <block wx:for="{{recordData}}" wx:key="recor">
+      <view class='btn-container pad-20 border-list mt30'>
+        <view class='add-width mt30'>
+          <text>审核人：</text>
+          <text>{{item.checkUserName}}</text>
+        </view>
+        <view class='add-width mt30'>
+          <text>审核人职务：</text>
+          <text>{{item.empDutyStr}}</text>
+        </view>
+        <view class='add-width mt30'>
+          <text>类型：</text>
+          <text>{{item.typeStr}}</text>
+        </view>
+        <view class='add-width mt30'>
+          <text>审核状态：</text>
+          <text class='success-color'>通过</text>
+        </view>
+        <view class='add-width mt30'>
+          <text>审核时间：</text>
+          <text>{{item.result}}</text>
+        </view>
+        <view class='add-width mt30'>
+          <text>备注：</text>
+          <text>{{item.remark}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

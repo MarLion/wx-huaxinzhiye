@@ -1,0 +1,42 @@
+<view class="followup">
+  <!--录入跟进-->
+  <view class="followInput">
+    <view class="radioBox flex-wrp flex-direction-row justify-content-space-between">
+      <view >
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{select}}" wx:key="{{item}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+      <view>
+        <checkbox-group bindchange="checkboxChange">
+          <label class="checkbox" wx:for="{{top}}" wx:key="{{item}}">
+            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+    <view>
+        <textarea placeholder="请输入跟进相关信息" name="textarea" class="textarea" value="{{bindFormSubmit}}" maxlength="-1" bindinput="bindFormSubmit"/>  
+        <view class="flex-wrp flex-direction-row justify-content-space-between  mt60">
+          <button  type="primary" class="bottomInput" bindtap="addfollow"> 提交 </button>
+          <button  class="bottomInput"> 取消 </button>
+        </view>    
+    </view>
+    <view>
+
+    </view>
+  </view>
+  <!--跟进列表-->
+  <view class="followList" wx:for="{{recordList}}" wx:key="{{item}}">
+    <view class="mb20 flex-wrp flex-direction-row justify-content-space-between">
+      <text class="text1">{{item.userName}}</text>
+      <text class="text2">{{item.addTime}}</text>
+      <text class="text3">{{item.typeStr}}</text>
+    </view>
+    <view>
+      <text class="text4 word-wrap">{{item.remark}}</text>
+    </view>
+  </view>
+</view>

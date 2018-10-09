@@ -1,0 +1,42 @@
+<view class="followup">
+  <!--录入跟进-->
+  <view class="mb30 tal" >
+    <text class="text6">钥匙管理</text>
+    <button class="bottomInput-del" bindtap="delKey" wx:if="{{keyshow && keyDel}}"> 删除 </button>
+    <button class="bottomInput-del" bindtap="del" wx:if="{{keyshow && !keyDel}}"> 更改 </button>
+  </view>  
+  <view class="followInput " wx:if="{{!keyshow}}">
+    <view class="radioBox flex-wrp flex-direction-row">
+        <text class="text5">编号:</text>
+        <textarea placeholder="请输入钥匙编号" name="textarea" class="textarea-xs" value="{{keyNo}}" maxlength="-1" bindinput="keyNum"/>
+    </view>
+    <view class="mt20">
+      <view class="radioBox flex-wrp flex-direction-row">
+        <text class="text5">备注:</text>
+        <textarea placeholder="请输入跟进相关信息" name="textarea" class="textarea" value="{{bindFormSubmit}}" maxlength="-1" bindinput="bindFormSubmit"/>  
+      </view>
+        <view class="flex-wrp flex-direction-row justify-content-space-between mt60">
+          <button  type="primary" class="bottomInput" bindtap="addfollow"> 提交 </button>
+          <button  class="bottomInput" bindtap="cancel"> 取消 </button>
+        </view>    
+    </view>
+  </view>
+  
+  <!--跟进列表-->
+  <view class="followList" wx:for="{{keyList}}" wx:key="{{item}}">  
+    <view class="mb20 flex-wrp flex-direction-row justify-content-space-between">
+      <text class="text1">{{item.userName}}</text>
+      <text class="text2">{{item.addTimeStr}}</text>
+      <text class="text3">{{item.stateStr}}</text>
+      <text class="text3">{{item.checkTypeStr}}</text>
+    </view>
+    <view class="ml20 mb10">
+      <text class="text4">编号:</text>
+      <text class="text7 ml20">{{item.number}}</text>
+    </view>
+    <view class="ml20">
+      <text class="text4">备注:</text>
+      <text class="text7 ml20 word-wrap">{{item.remark}}</text>
+    </view>
+  </view>
+</view>
